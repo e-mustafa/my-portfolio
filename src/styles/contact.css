@@ -1,0 +1,39 @@
+.contact-section{
+   background: var(--linear-bg);
+   background: url(../../public/img/23a39b60a0fc648af88adb3edb86eca1.jpg) center;
+   background: url(../../public/img/aff62fffa909bdb98d85fbc6753fdcee.jpg) center;
+   background-size: cover;
+   margin-top: 50px;
+   padding: 50px 0 160px;
+   
+}
+
+.section-title{
+   font-size: 34px;
+   font-weight: 700;
+   color: var(--white-color)
+}
+
+
+
+
+
+
+
+
+/* ------------------------- contact form ------------------------- */
+.form-control {
+   background-color: var(--dark-color-trans);
+	padding: 15px 15px;
+	border-radius: 15px;
+   color: var(--white-color);
+}
+.form-control:focus {
+	box-shadow: none;
+}
+.form-control::placeholder {
+	color: var(--white-color) ;
+}
+.form-control:focus::placeholder{
+   color: var(--main-color-dark);
+}

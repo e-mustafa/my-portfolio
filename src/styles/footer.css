@@ -1,0 +1,56 @@
+.footer-section {
+	background: url(/public/img/dark-pg-1.png);
+}
+
+.subscribe {
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+
+	/* background-color: var(--dark-color-trans); */
+	padding: 70px;
+	margin-top: -150px;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.8) 10%,
+		rgb(187 187 187 / 59%) 100%
+	);
+	backdrop-filter: blur(3px);
+	background-color: #0dcaf0;
+	background-color: rgba(71, 85, 105, 0.89);
+}
+
+.subscribe-email {
+	display: flex;
+	gap: 10px;
+	border: 2px solid var(--main-color);
+	box-shadow: var(--main-shadow);
+	padding: 5px;
+	background-color: var(--white-color);
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+.subscribe-email input[type="email"] {
+	background-color: transparent;
+	border: none;
+	padding: 0 0 0 20px;
+}
+.subscribe-email input[type="email"]::placeholder {
+	color: var(--main-color-dark);
+}
+.subscribe-email button {
+	padding: 14px 40px;
+	border: 0;
+	border-radius: inherit;
+	-webkit-border-radius: 14px;
+	background: var(--linear-bg);
+	opacity: 1;
+	box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.431);
+	transition: 0.25s ease-in;
+	-webkit-transition: 0.25s ease-in;
+}
+.subscribe-email button:hover {
+	opacity: 0.8;
+}
+.subscribe-email button:focus {
+	box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.431);
+}

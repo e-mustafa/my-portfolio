@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/globals.css";
+import "./styles/projects.css";
+import "./styles/contact.css";
+import "./styles/App.css";
+import "./styles/footer.css";
+import NavbarMain from "./Components/NavbarMain";
+import { BrowserRouter } from "react-router-dom";
+import MainSection from "./Components/MainSection";
+import SkillsSwiper from "./Components/SkillsSwiper";
+import ProjectsSection from "./Components/ProjectsSection";
+import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<NavbarMain />
+			<MainSection />
+			<SkillsSwiper />
+			<ProjectsSection />
+			<Contact />
+			<Footer />
+		</BrowserRouter>
+	);
 }
 
 export default App;
