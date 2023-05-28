@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import logo from "../logo.svg";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
 import { HashLink } from "react-router-hash-link";
 import { navLinks } from "./mydata";
 
-
-
 export default function NavbarMain() {
-	const location = useLocation();
+	const [activeLink, setActiveLink] = useState("home");
+
+	const [showMobileNav, setShowMobileNav] = useState(false);
+
+	useEffect(() => {
+		const handleMobileNav = () => {
+			setShowMobileNav(false);
+		};
+		window.addEventListener("mousedown", handleMobileNav);
+	});
 
 	const [scrolled, setScrolled] = useState(false);
 	useEffect(() => {
@@ -24,8 +30,6 @@ export default function NavbarMain() {
 		};
 	}, []);
 
-
-
 	return (
 		<header>
 			<Navbar
@@ -34,7 +38,7 @@ export default function NavbarMain() {
 				expand="lg"
 				className={`shadow p-0 ${scrolled ? "App-header" : ""}`}
 			>
-				<Container>
+				<Container onClick={() => showMobileNav && setShowMobileNav(false)}>
 					<HashLink to="/#home" className="navbar-brand">
 						<img
 							src={logo}
@@ -44,7 +48,10 @@ export default function NavbarMain() {
 						/>
 					</HashLink>
 
-					<Navbar.Toggle aria-controls="responsive-navbar-nav">
+					<Navbar.Toggle
+						aria-controls="responsive-navbar-nav"
+						onClick={() => setShowMobileNav(!showMobileNav)}
+					>
 						<span className="icon-bar top-bar"></span>
 						<span className="icon-bar middle-bar"></span>
 						<span className="icon-bar bottom-bar"></span>
@@ -52,7 +59,9 @@ export default function NavbarMain() {
 
 					<Navbar.Collapse
 						id="responsive-navbar-nav"
-						className="align-items-center bg-xs-dark text-center py-2"
+						className={`align-items-center bg-xs-dark text-center py-4 py-lg-2
+            ${!scrolled ? "mobileNav" : ""}
+            `}
 					>
 						<Nav className="me-auto flex-grow-1 justify-content-center">
 							{navLinks?.map((e, i) => (
@@ -61,9 +70,10 @@ export default function NavbarMain() {
 									smooth
 									to={`#${e.link}`}
 									className={`nav-fill-link ${
-										location.hash.includes(e.link) ? "active" : ""
+										activeLink === e.link ? "active" : ""
 									}`}
 									data-title={e.title}
+									onClick={() => setActiveLink(e.link)}
 								>
 									{e.title}
 								</HashLink>
@@ -74,12 +84,12 @@ export default function NavbarMain() {
 							<SocialIcons />
 						</span>
 
-						<HashLink to="/#cntact"
+						<HashLink
+							to="/#contact"
 							className="btn btn-borderd my-2 my-md-0 ms-lg-3"
 						>
 							Let's Contact
 						</HashLink>
-						
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

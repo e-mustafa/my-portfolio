@@ -4,6 +4,7 @@ import "./styles/projects.css";
 import "./styles/contact.css";
 import "./styles/App.css";
 import "./styles/footer.css";
+
 import NavbarMain from "./Components/NavbarMain";
 import { BrowserRouter } from "react-router-dom";
 import MainSection from "./Components/MainSection";

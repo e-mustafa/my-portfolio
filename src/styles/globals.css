@@ -19,6 +19,7 @@
 	);
 
 	--linear-bg2: linear-gradient(90deg, #0074ff 0%, #01eefe 100%);
+	--linear-bg3: linear-gradient(0deg, #23262b 0%, rgb(70 77 93 / 94%) 100%);
 
 	--main-shadow: 0px 0px 5px 1px var(--main-color);
 }
@@ -59,6 +60,10 @@ a:hover{
 }
 .text-main{
 	color: var(--main-color);
+}
+
+.gap-row-2{
+	row-gap: 15px
 }
 
 

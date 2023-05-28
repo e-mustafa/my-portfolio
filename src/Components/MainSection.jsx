@@ -73,7 +73,10 @@ export default function MainSection() {
 								devlopment
 							</p>
 
-							<HashLink to="/#cntact">
+							<HashLink
+								to="/#contact"
+								className="icon-link icon-link-hover"
+							>
 								let's connect <FaRegArrowAltCircleRight />
 							</HashLink>
 						</Stack>

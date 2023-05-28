@@ -1,46 +1,145 @@
 import { useState } from "react";
-import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
+import {
+	Button,
+	CloseButton,
+	Col,
+	Container,
+	Form,
+	Row,
+	Spinner,
+	Toast,
+	ToastContainer,
+} from "react-bootstrap";
+import emailjs from "@emailjs/browser";
 
-function Contact() {
+let regexEmail = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+let regexPhone = new RegExp("^[-+0-9]{7,15}$");
+
+export default function Contact() {
+	// show/hide toast
+	const [show, setShow] = useState(false);
+
+	// form control and functions
 	const [formInfo, setFormInfo] = useState({
-		fName: "",
-		lName: "",
+		name: "",
 		email: "",
 		phone: "",
 		message: "",
 	});
+	const [isValid, setIsValid] = useState({});
+	const [btnText, setBtnText] = useState("Send");
+	const [status, setStatus] = useState({});
 
-  const [btnText, setBtnText] = useState("Send")
-  const [status, setStatus] = useState("")
-
-  
 	function handelInput(e) {
 		setFormInfo((currentValue) => {
 			return {
 				...currentValue,
-				[e.target.name]: e.target.defaultValue,
+				[e.target.name]: e.target.value,
 			};
 		});
+		if (e.target.name === "email") {
+			if (e.target.value !== "" && regexEmail.test(e.target.value)) {
+				setIsValid((prev) => {
+					return { ...prev, email: { invalid: false, message: "" } };
+				});
+			} else {
+				setIsValid((prev) => {
+					return {
+						...prev,
+						email: {
+							invalid: true,
+							message: "Please enter a valid email address",
+						},
+					};
+				});
+			}
+		}
+
+		if (e.target.name === "phone") {
+			if (e.target.value !== "" && regexPhone.test(e.target.value)) {
+				setIsValid((prev) => {
+					return {
+						...prev,
+						phone: { invalid: false, message: "" },
+					};
+				});
+			} else {
+				setIsValid((prev) => {
+					return {
+						...prev,
+						phone: {
+							invalid: true,
+							message: "valid number between 7 and 15 digits",
+						},
+					};
+				});
+			}
+		}
 	}
 
 	function handelSubmit(e) {
 		e.preventDefault();
+		if (formInfo.email === "" && formInfo.phone === "") {
+			setIsValid((prev) => {
+				return {
+					...prev,
+					email: {
+						invalid: true,
+						message: "Please enter an email or phone No.",
+					},
+					phone: {
+						invalid: true,
+						message: "Please enter a phone No. or email",
+					},
+				};
+			});
+		} else if (
+			isValid?.email?.invalid === false ||
+			isValid?.phone?.invalid === false
+		) {
+			setBtnText("sending...");
+			emailjs
+				.sendForm(
+					"service_lp3qp5q",
+					"template_a98e2km",
+					e.target,
+					"Q4VgSuu5zR0FYlGeR"
+				)
+				.then(
+					(result) => {
+						console.log(result);
+						setBtnText("Message Sent");
+						setStatus({
+							success: true,
+							message: "Message sent successfully",
+						});
+						setShow(true);
+						e.target.reset();
+						setTimeout(() => setBtnText("Send"), 3000);
+					},
+					(error) => {
+						console.log(error);
+						setBtnText("Unsent");
+						setShow(true);
+						setStatus({
+							success: false,
+							message: "Somthing went wrong, Please try again later..",
+						});
+					}
+				);
+		}
 	}
 
 	return (
-		<section id="cntact" className="contact-section">
+		<section id="contact" className="contact-section">
 			<Container>
-				<Row>
+				<Row className="my-5">
 					<Col xs={12} md={6}></Col>
 					<Col xs={12} md={6}>
 						<div>
 							<h2 className="section-title mb-4">Get In Touch</h2>
 							<Form onSubmit={handelSubmit} action="post">
-								<Row className="gap-row-3 mb-3">
+								<Row className="gap-row-2 mb-3">
 									<Form.Group
 										as={Col}
 										xs={12}
@@ -49,9 +148,9 @@ function Contact() {
 									>
 										<Form.Control
 											type="text"
-											name="fName"
-											placeholder="Your First Name"
-											defaultValue={formInfo?.fName}
+											name="name"
+											placeholder="Your Name"
+											value={formInfo?.name}
 											onInput={handelInput}
 										/>
 									</Form.Group>
@@ -60,43 +159,43 @@ function Contact() {
 										as={Col}
 										xs={12}
 										lg={6}
-										controlId="formGridLName"
+										controlId="formGridPhone"
+										className="position-relative"
 									>
 										<Form.Control
-											type="text"
-											name="lName"
-											placeholder="Your Last Name"
-											defaultValue={formInfo?.lName}
+											type="tel"
+											name="phone"
+											placeholder="Phone Number *"
+											value={formInfo?.phone}
 											onInput={handelInput}
+											isInvalid={isValid?.phone?.invalid}
 										/>
+										{isValid.phone?.invalid && (
+											<Form.Control.Feedback type="invalid" tooltip>
+												{isValid?.phone?.message}
+											</Form.Control.Feedback>
+										)}
 									</Form.Group>
 
 									<Form.Group
 										as={Col}
 										xs={12}
 										controlId="formGridEmail"
+										className="position-relative"
 									>
 										<Form.Control
 											type="email"
 											name="email"
-											placeholder="Enter email"
-											defaultValue={formInfo?.email}
+											placeholder="Enter email *"
+											value={formInfo?.email}
 											onInput={handelInput}
+											isInvalid={isValid?.email?.invalid}
 										/>
-									</Form.Group>
-
-									<Form.Group
-										as={Col}
-										xs={12}
-										controlId="formGridPhone"
-									>
-										<Form.Control
-											type="tel"
-											name="phone"
-											placeholder="Your Phone Number"
-											defaultValue={formInfo?.phone}
-											onInput={handelInput}
-										/>
+										{isValid.email?.invalid && (
+											<Form.Control.Feedback type="invalid" tooltip>
+												{isValid?.email?.message}
+											</Form.Control.Feedback>
+										)}
 									</Form.Group>
 
 									<Form.Group
@@ -109,7 +208,7 @@ function Contact() {
 											name="message"
 											rows={3}
 											placeholder="Message..."
-											defaultValue={formInfo?.message}
+											value={formInfo?.message}
 											onInput={handelInput}
 										/>
 									</Form.Group>
@@ -118,12 +217,42 @@ function Contact() {
 								<Button
 									variant="light"
 									type="submit"
-									className="btn btn-borderd"
+									className="btn btn-borderd w-50 "
+									size="large"
 								>
+									{btnText === "sending..." && (
+										<Spinner
+											animation="border"
+											variant="info"
+											size="sm"
+										/>
+									)}{" "}
 									{btnText}
 								</Button>
 							</Form>
-							<p>{status} sbsdbsdbsdb</p>
+
+							<ToastContainer
+								position="bottom-start"
+								className="position-fixed p-3"
+							>
+								<Toast
+									onClose={() => setShow(false)}
+									show={show}
+									delay={4000}
+									autohide
+									bg={status?.success ? "success" : "danger"}
+									style={{ maxWidth: "320px" }}
+								>
+									<Toast.Body>
+										<div className="d-flex justify-content-between align-items-center">
+											<h6 className="text-light me-auto">
+												{status?.message}
+											</h6>
+											<CloseButton onClick={() => setShow(false)} />
+										</div>
+									</Toast.Body>
+								</Toast>
+							</ToastContainer>
 						</div>
 					</Col>
 				</Row>
@@ -131,5 +260,3 @@ function Contact() {
 		</section>
 	);
 }
-
-export default Contact;

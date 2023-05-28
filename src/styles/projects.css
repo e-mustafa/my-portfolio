@@ -48,7 +48,7 @@
 /* ------------------------------ card project info ------------------------- */
 .card-col {
 	animation: cards 0.5s;
-	-webkit-animation: cards 0.8s forwards ease-in-out; 
+	-webkit-animation: cards 0.8s forwards ease-in-out;
 	visibility: hidden;
 }
 .card::after {
@@ -64,7 +64,7 @@
 	background: var(--linear-bg2);
 	opacity: 0.8;
 }
-.card img{
+.card img {
 	min-height: 70px;
 }
 
@@ -121,4 +121,60 @@
 		-webkit-transform: translate(0, 0);
 		visibility: visible;
 	}
+}
+
+/* ------------------------- row Card project details --------------------------- */
+.modal-content {
+	border: 0;
+	margin-left: 40px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	background-color: var(--dark1-color);
+	background: linear-gradient(0deg, #23262b 0%, #464d5df0 100%);
+	box-shadow: 0px 0px 12px 5px var(--main-color);
+}
+
+@media (max-width: 991px) {
+	.modal-content {
+		margin-top: 22%;
+	}
+}
+
+.close-button {
+	position: absolute;
+	top: -90px;
+	right: 0px;
+}
+
+.row_card-img {
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	box-shadow: var(--main-shadow);
+}
+@media (max-width: 991px) {
+	.row_card-img {
+		margin-top: -22%;
+		max-width: 100% !important;
+	}
+}
+@media (min-width: 992px) {
+	.row_card-img {
+		margin-left: -33%;
+		height: 250px;
+	}
+}
+
+.row_card-link {
+	padding: 8px 30px;
+	border: 0;
+	border-radius: inherit;
+	-webkit-border-radius: 14px;
+	background: var(--linear-bg);
+	opacity: 1;
+	box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.431);
+	transition: 0.25s ease-in;
+	-webkit-transition: 0.25s ease-in;
+
+	margin-right: 20px;
+	color: var(--white-color);
 }

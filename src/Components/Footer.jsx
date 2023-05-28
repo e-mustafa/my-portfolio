@@ -21,7 +21,9 @@ export default function Footer() {
 										type="email"
 										placeholder="Enter Your Email"
 									/>
-									<Button className="btn text-light border-0">Send</Button>
+									<Button className="btn text-light border-0 subscribe-button">
+										Send
+									</Button>
 								</div>
 							</div>
 						</Col>
@@ -32,10 +34,10 @@ export default function Footer() {
 			<div className="copyright mt-5 py-3 bg-dark">
 				<div className="container d-flex justify-content-center justify-content-lg-between align-items-center flex-wrap text-muted">
 					<SocialIcons />
-					<span className="">
+					<span className="text-center">
 						Copyrights &#169;
-						{new Date().getFullYear()}&#160; designed &
-						developed by &#160;
+						{new Date().getFullYear()}&#160; designed & developed by
+						&#160;
 						<a
 							href="https://e-mustafa.github.io/portfolio/"
 							target="_blank"
