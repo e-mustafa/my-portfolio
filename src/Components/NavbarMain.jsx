@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import logo from "../logo.svg";
+// import logo from "../imgs/portf-05.png";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import SocialIcons from "./SocialIcons";
 import { HashLink } from "react-router-hash-link";
 import { navLinks } from "./mydata";
+import { TbBrand4Chan } from "react-icons/tb";
 
 export default function NavbarMain() {
 	const [activeLink, setActiveLink] = useState("home");
@@ -39,13 +40,14 @@ export default function NavbarMain() {
 				className={`shadow p-0 ${scrolled ? "App-header" : ""}`}
 			>
 				<Container onClick={() => showMobileNav && setShowMobileNav(false)}>
-					<HashLink to="/#home" className="navbar-brand">
-						<img
+					<HashLink to="#home" className="navbar-brand">
+						{/* <img
 							src={logo}
 							className="App-logo"
 							alt="Mustafa Ahmed"
 							width="50px"
-						/>
+						/> */}
+						<TbBrand4Chan fontSize={35} color="#01eefe" />
 					</HashLink>
 
 					<Navbar.Toggle
@@ -85,7 +87,7 @@ export default function NavbarMain() {
 						</span>
 
 						<HashLink
-							to="/#contact"
+							to="#contact"
 							className="btn btn-borderd my-2 my-md-0 ms-lg-3"
 						>
 							Let's Contact

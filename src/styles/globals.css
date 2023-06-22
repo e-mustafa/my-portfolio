@@ -61,7 +61,9 @@ a:hover{
 .text-main{
 	color: var(--main-color);
 }
-
+.text-justify{
+	text-align: justify;
+}
 .gap-row-2{
 	row-gap: 15px
 }

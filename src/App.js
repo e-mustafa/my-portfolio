@@ -6,7 +6,7 @@ import "./styles/App.css";
 import "./styles/footer.css";
 
 import NavbarMain from "./Components/NavbarMain";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import MainSection from "./Components/MainSection";
 import SkillsSwiper from "./Components/SkillsSwiper";
 import ProjectsSection from "./Components/ProjectsSection";
@@ -15,14 +15,14 @@ import Footer from "./Components/Footer";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<NavbarMain />
 			<MainSection />
 			<SkillsSwiper />
 			<ProjectsSection />
 			<Contact />
 			<Footer />
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
 

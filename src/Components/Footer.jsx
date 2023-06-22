@@ -32,9 +32,9 @@ export default function Footer() {
 			</Container>
 			{/* copyright */}
 			<div className="copyright mt-5 py-3 bg-dark">
-				<div className="container d-flex justify-content-center justify-content-lg-between align-items-center flex-wrap text-muted">
+				<div className="container d-flex justify-content-center  align-items-center flex-wrap text-muted">
 					<SocialIcons />
-					<span className="text-center">
+					<span className="text-center flex-grow-1">
 						Copyrights &#169;
 						{new Date().getFullYear()}&#160; designed & developed by
 						&#160;

@@ -56,7 +56,7 @@ export default function MainSection() {
 				<Row className="align-items-center">
 					<Col xs={12} lg={6}>
 						<Stack gap={2} className="text-light mt-0 mt-lg-5 pb-5">
-							<h6>Welcome All in my Portfolio</h6>
+							<h5 className="welcome-line">Welcome All in my Portfolio</h5>
 							<h1>
 								I'm <span>Mustafa Abutabl,</span>
 							</h1>

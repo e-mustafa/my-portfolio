@@ -1,6 +1,7 @@
 /* --------------------------- Skills --------------------------------------- */
 .skills-section {
 	background: rgba(0, 0, 0, 0.914);
+	background: linear-gradient(160deg, #323846 0%, rgb(0 0 0 / 95%) 100%);
 	border: 4px solid var(--main-color);
 	margin: 50px auto;
 	border-radius: 45px;
@@ -28,6 +29,7 @@
 .swiper-button-next:after,
 .swiper-button-prev:after {
 	font-size: 24px !important;
+	color: var(--main-color);
 }
 
 div [data-angel] {

@@ -10,6 +10,9 @@ import {
 	Toast,
 	ToastContainer,
 } from "react-bootstrap";
+
+import WebDesignImg from "../imgs/Web-Design.png";
+
 import emailjs from "@emailjs/browser";
 
 let regexEmail = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
@@ -123,7 +126,7 @@ export default function Contact() {
 						setShow(true);
 						setStatus({
 							success: false,
-							message: "Somthing went wrong, Please try again later..",
+							message: "Something went wrong, Please try again later..",
 						});
 					}
 				);
@@ -134,7 +137,9 @@ export default function Contact() {
 		<section id="contact" className="contact-section">
 			<Container>
 				<Row className="my-5">
-					<Col xs={12} md={6}></Col>
+					<Col xs={12} md={6}>
+						<img src={WebDesignImg} alt="Web Design" width="100%" height="100%" />
+					</Col>
 					<Col xs={12} md={6}>
 						<div>
 							<h2 className="section-title mb-4">Get In Touch</h2>

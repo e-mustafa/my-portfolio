@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { CloseButton, Col, Modal, Row, Stack } from "react-bootstrap";
 
 function ProjectDetails({ show, setShow, modalData }) {
-
 	const refModal = useRef(null);
 	// useEffect(() => {
 	// 	// handel close modal outside click
@@ -43,7 +42,7 @@ function ProjectDetails({ show, setShow, modalData }) {
 							<h3 className="row_card-title text-light ">
 								{modalData?.title}
 							</h3>
-							<p className="row_card-text text-muted">
+							<p className="row_card-text text-muted text-justify">
 								{modalData?.description}
 							</p>
 							<p className="text-muted">
@@ -53,20 +52,20 @@ function ProjectDetails({ show, setShow, modalData }) {
 						<div className="d-flex gap-3 flex-wrap justify-content-center">
 							<a
 								className="subscribe-button py-2 text-light me-3"
-								href={modalData?.link}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Visit Site
-							</a>
-
-							<a
-								className="subscribe-button py-2 text-light me-3"
 								href={modalData?.githubLink}
 								target="_blank"
 								rel="noreferrer"
 							>
 								Github
+							</a>
+
+							<a
+								className="subscribe-button py-2 text-light me-3"
+								href={modalData?.link}
+								target="_blank"
+								rel="noreferrer"
+							>
+								Visit Site
 							</a>
 						</div>
 					</Stack>

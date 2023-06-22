@@ -114,6 +114,14 @@
 }
 /* ------------------------------------------------------------ */
 
+.welcome-line {
+	width: fit-content;
+	padding: 10px;
+	border: 1px solid cyan;
+	background: var(--linear-bg);
+}
+/* ------------------------------------------------------------ */
+
 /* Define the shape and color of the hamburger lines */
 .navbar-toggler span {
 	display: block;

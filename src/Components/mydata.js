@@ -165,7 +165,7 @@ export const myProjects = [
 		githubLink: "https://github.com/e-mustafa/basic-Calculator",
 		Language: ["HTML", "CSS", "Bootstrap", "Javascript"],
 		description:
-			"Basic Calculator for doing simple mathematical operations: addition, subtraction, multiplication, division. This is a simplified version of the online.",
+			"Basic Calculator for doing simple mathematical operations: addition, subtraction, multiplication and division.",
 	},
 	{
 		id: 102,
