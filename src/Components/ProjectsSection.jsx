@@ -12,7 +12,7 @@ export default function ProjectsSection() {
 					<Stack className="my-5 text-center">
 						<h2 className="fs-1">My Projects</h2>
 						<p>
-							My name is Mustafa, I live in Cairo, this is the 5th
+							My name is Mustafa, I live in Egypt, this is the 5th
 							project in React.js
 						</p>
 					</Stack>

@@ -22,12 +22,12 @@ export const navLinks = [
 
 
 
-export const mySkils = [
+export const mySkills = [
 	{ name: "HTML", value: 95 },
 	{ name: "CSS", value: 90 },
 	{ name: "JavaScript", value: 87 },
 	{ name: "Bootstrap", value: 92 },
-	{ name: "Matiral UI", value: 75 },
+	{ name: "Material UI", value: 75 },
 	{ name: "React", value: 84 },
 ];
 

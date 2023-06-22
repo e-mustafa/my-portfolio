@@ -3,10 +3,10 @@ import "../styles/pictur.css";
 
 import myImage from "../imgs/my-pic-with-hex.png";
 
-export default function Pictur() {
+export default function Picture() {
 	return (
 		<>
-			<img src={myImage} alt="Mustafa Abutabl Pictur" width="100%"  />
+			<img src={myImage} alt="Mustafa Abutabl Pictur" width="100%" />
 			{/* <div className="contain">
 				<div className="hex"></div>
 

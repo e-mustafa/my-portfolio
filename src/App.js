@@ -1,3 +1,4 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/globals.css";
 import "./styles/projects.css";
@@ -26,4 +27,4 @@ function App() {
 	);
 }
 
-export default App;
+export default React.memo( App);

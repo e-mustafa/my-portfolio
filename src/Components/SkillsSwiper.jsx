@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
-import { mySkils } from "./mydata";
+import { mySkills } from "./mydata";
 import { CircularProgressBar } from "@tomickigrzegorz/react-circular-progress-bar";
 import { Stack } from "react-bootstrap";
 
@@ -19,7 +19,7 @@ import { Stack } from "react-bootstrap";
 
 export default function SkillsSwiper() {
 	return (
-		<section id="skills" className=" text-light py-5" >
+		<section id="skills" className=" text-light py-5">
 			<div className="container">
 				<div className="skills-section">
 					<Stack className="my-5 text-center">
@@ -51,7 +51,7 @@ export default function SkillsSwiper() {
 							}}
 						>
 							<div className="d-flex jusify-content-center w-75 m-auto ">
-								{mySkils?.map((s, i) => (
+								{mySkills?.map((s, i) => (
 									<SwiperSlide key={i}>
 										<div className="d-flex flex-column jusify-content-center text-center">
 											<CircularProgressBar

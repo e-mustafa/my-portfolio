@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Stack } from "react-bootstrap";
-import Pictur from "./Pictur";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
+import Picture from "./Picture";
 
 export default function MainSection() {
 	const [typewriter, setTypewriter] = useState("");
@@ -56,7 +56,9 @@ export default function MainSection() {
 				<Row className="align-items-center">
 					<Col xs={12} lg={6}>
 						<Stack gap={2} className="text-light mt-0 mt-lg-5 pb-5">
-							<h5 className="welcome-line">Welcome All in my Portfolio</h5>
+							<h5 className="welcome-line">
+								Welcome All in my Portfolio
+							</h5>
 							<h1>
 								I'm <span>Mustafa Abutabl,</span>
 							</h1>
@@ -69,8 +71,9 @@ export default function MainSection() {
 							</h2>
 
 							<p>
-								Hello everyone, i have 3years of experiance in web
-								devlopment
+								{" "}
+								Hello everyone, i have One year of experience in web
+								development{" "}
 							</p>
 
 							<HashLink
@@ -84,7 +87,7 @@ export default function MainSection() {
 
 					<Col xs={12} lg={6} className="order-0 order-lg-2">
 						<div className="pic-parent px-0 px-lg-4">
-							<Pictur />
+							<Picture />
 						</div>
 					</Col>
 				</Row>

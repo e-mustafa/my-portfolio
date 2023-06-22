@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import {
 	Button,
 	CloseButton,
@@ -18,7 +18,7 @@ import emailjs from "@emailjs/browser";
 let regexEmail = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
 let regexPhone = new RegExp("^[-+0-9]{7,15}$");
 
-export default function Contact() {
+function Contact() {
 	// show/hide toast
 	const [show, setShow] = useState(false);
 
@@ -265,3 +265,4 @@ export default function Contact() {
 		</section>
 	);
 }
+export default React.memo( Contact);
