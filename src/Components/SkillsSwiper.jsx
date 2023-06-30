@@ -14,9 +14,6 @@ import { mySkills } from "./mydata";
 import { CircularProgressBar } from "@tomickigrzegorz/react-circular-progress-bar";
 import { Stack } from "react-bootstrap";
 
-
-
-
 export default function SkillsSwiper() {
 	return (
 		<section id="skills" className=" text-light py-5">
@@ -59,7 +56,7 @@ export default function SkillsSwiper() {
 												percent={s.value}
 												round
 												fontColor="#fff"
-												linearGradient={["#01EEFE", "#004F54"]}
+												linearGradient={["#004F54", "#01EEFE"]}
 											/>
 											<h5 className="">{s.name}</h5>
 										</div>

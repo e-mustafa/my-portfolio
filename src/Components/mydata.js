@@ -1,16 +1,30 @@
-import templateCarouselImg from "../imgs/template-w-carousel.png";
-import watchProductsImg from "../imgs/watch-products.png";
-import basicCalculatorImg from "../imgs/basic-calculator.png";
-import currencyExchangeImg from "../imgs/currency-exchange.jpg";
-import caraShopingImg from "../imgs/cara-shoping.png";
-import lusionShoppingImg from "../imgs/react-lusion-app.jpg";
-import coffeeKingImg from "../imgs/Tamplate-103-CoffeeKing-Bootstrap.jpg";
-import Tamplate102RocherImg from "../imgs/Tamplate-102-Rocher-Furniture.jpg";
-import Tamplate101DesignImg from "../imgs/Tamplate-101.jpg";
-import simpleMoviesReduxImg from "../imgs/simple-movies-redux.jpg";
-import simpleMoviesImg from "../imgs/simple-movies.jpg";
-import portfolioImg from "../imgs/mustafa-portfolio.png";
+import templateCarousel2Img from "../imgs/Projects/template-w-carouse-full.jpg";
+import watchProducts2Img from "../imgs/Projects/watch-products-full.jpg";
+import caraShoping2Img from "../imgs/Projects/cara-shoping-full.jpg";
+import lusionShopping2Img from "../imgs/Projects/react-lusion-full.jpg";
+import coffeeKing2Img from "../imgs/Projects/Tamplate-103-CoffeeKing-Bootstrap-full.jpg";
+import Tamplate102Rocher2Img from "../imgs/Projects/Tamplate-102-Rocher-Furniture-full.jpg";
+import Tamplate101Design2Img from "../imgs/Projects/Tamplate-101-full.jpg";
+import simpleMoviesRedux2Img from "../imgs/Projects/simple-movies-redux-full.jpg";
+import simpleMovies2Img from "../imgs/Projects/Simple Movies-full.jpg";
+import devitaWatchs2Img from "../imgs/Projects/devita-watchs-full.jpg";
 
+
+import basicCalculatorImg from "../imgs/Projects/basic-calculator.jpg";
+import currencyExchangeImg from "../imgs/Projects/currency-exchange.jpg";
+import portfolioImg from "../imgs/Projects/mustafa-portfolio.jpg";
+
+import templateCarouselImg from "../imgs/Projects/template-w-carousel.jpg";
+import watchProductsImg from "../imgs/Projects/watch-products.jpg";
+import caraShopingImg from "../imgs/Projects/cara-shoping.jpg";
+import lusionShoppingImg from "../imgs/Projects/react-lusion-app.jpg";
+import coffeeKingImg from "../imgs/Projects/Tamplate-103-CoffeeKing-Bootstrap.jpg";
+import Tamplate102RocherImg from "../imgs/Projects/Tamplate-102-Rocher-Furniture.jpg";
+import Tamplate101DesignImg from "../imgs/Projects/Tamplate-101.jpg";
+import simpleMoviesReduxImg from "../imgs/Projects/simple-movies-redux.jpg";
+import simpleMoviesImg from "../imgs/Projects/simple-movies.jpg";
+import devitaWatchsImg from "../imgs/Projects/devita-watchs.jpg";
+// ----------------------------------------------------------------------------
 
 
 export const navLinks = [
@@ -69,12 +83,21 @@ export const myPersonalInfo = [
 
 export const myProjects = [
 	{
+		id: 113,
+		title: "Devita Watchs",
+		img: [devitaWatchsImg, devitaWatchs2Img],
+		link: "https://devita-watchs.vercel.app/",
+		githubLink: "https://github.com/e-mustafa/devita-watchs",
+		Language: ["HTML", "CSS", "Material Ui", "Javascript", "React", "Next"],
+		description:
+			"Online store for selling wristwatches, Developed using Next js 13 app dirctory, static & dynamic metadata, shopping cart, favorite list, With notifications toast.",
+	},
+	{
 		id: 112,
 		title: "Coffee shop template",
-		img: coffeeKingImg,
+		img: [coffeeKingImg, coffeeKing2Img],
 		link: "https://e-mustafa.github.io/Tamplate-103-CoffeeKing-Bootstrap",
-		githubLink:
-			"https://github.com/e-mustafa/Tamplate-103-CoffeeKing-Bootstrap",
+		githubLink: "https://github.com/e-mustafa/Tamplate-103-CoffeeKing-Bootstrap",
 		Language: ["HTML", "CSS", "Bootstrap", "Javascript"],
 		description:
 			"Coffee shop template with edit bootstrap default colors and JavaScript shopping cart, favorite list, register and sign in with validate. With notifications toast. You need to register and sign in to checkout and add items to favorite list.",
@@ -82,7 +105,7 @@ export const myProjects = [
 	{
 		id: 111,
 		title: "Rocher-Furniture Tamplate",
-		img: Tamplate102RocherImg,
+		img: [Tamplate102RocherImg, Tamplate102Rocher2Img],
 		link: "https://e-mustafa.github.io/Tamplate-102-Rocher-Furniture",
 		githubLink: "https://github.com/e-mustafa/Tamplate-102-Rocher-Furniture",
 		Language: ["HTML5", "CSS3"],
@@ -91,7 +114,7 @@ export const myProjects = [
 	{
 		id: 110,
 		title: "Architectural Design Template",
-		img: Tamplate101DesignImg,
+		img: [Tamplate101DesignImg, Tamplate101Design2Img],
 		link: "https://e-mustafa.github.io/Tamplate-101/",
 		githubLink: "https://github.com/e-mustafa/Tamplate-101",
 		Language: ["HTML", "CSS"],
@@ -100,7 +123,7 @@ export const myProjects = [
 	{
 		id: 109,
 		title: "My Portfolio",
-		img: portfolioImg,
+		img: [portfolioImg],
 		link: "https://e-mustafa.github.io/portfolio/",
 		githubLink: "https://github.com/e-mustafa/portfolio",
 		Language: ["HTML", "CSS", "Material Ui", "Javascript", "React"],
@@ -110,7 +133,7 @@ export const myProjects = [
 	{
 		id: 108,
 		title: "Simple Movies with Redux",
-		img: simpleMoviesReduxImg,
+		img: [simpleMoviesReduxImg, simpleMoviesRedux2Img],
 		link: "https://simplemovies-redux.netlify.app",
 		githubLink: "https://github.com/e-mustafa/moviesApp-redux",
 		Language: ["HTML", "CSS", "Material Ui", "Javascript", "React", "Redux"],
@@ -120,37 +143,34 @@ export const myProjects = [
 	{
 		id: 107,
 		title: "Simple Movies",
-		img: simpleMoviesImg,
+		img: [simpleMoviesImg, simpleMovies2Img],
 		link: "https://simplemovies-app.netlify.app",
 		githubLink: "https://github.com/e-mustafa/sempleMoviesApp",
 		Language: ["HTML", "CSS", "Material Ui", "Javascript", "React"],
-		description:
-			"Simple movies website to discover popular movies, and add to favorite list.",
+		description: "Simple movies website to discover popular movies, and add to favorite list.",
 	},
 	{
 		id: 106,
 		title: "Lusion Shopping",
-		img: lusionShoppingImg,
+		img: [lusionShoppingImg, lusionShopping2Img],
 		link: "https://react-lusion-app.netlify.app",
 		githubLink: "https://github.com/e-mustafa/React-Lusion-App",
 		Language: ["HTML", "CSS", "Bootstrap", "Javascript", "React"],
-		description:
-			"Lustion ecommerce web responsive with many pages and form validation.",
+		description: "Lustion ecommerce web responsive with many pages and form validation.",
 	},
 	{
 		id: 105,
 		title: "Cara Shoping",
-		img: caraShopingImg,
+		img: [caraShopingImg, caraShoping2Img],
 		link: "https://cara-shoping.vercel.app",
 		githubLink: "https://github.com/e-mustafa/Cara-Shoping",
 		Language: ["HTML", "CSS", "Bootstrap", "Javascript"],
-		description:
-			"responsive ecommerce website main page, sign up and sign in made with js.",
+		description: "responsive ecommerce website main page, sign up and sign in made with js.",
 	},
 	{
 		id: 104,
 		title: "Currency Exchange",
-		img: currencyExchangeImg,
+		img: [currencyExchangeImg],
 		link: "https://currency-exchange-mu.vercel.app",
 		githubLink: "https://github.com/e-mustafa/currencyExchange",
 		Language: ["HTML", "CSS", "Bootstrap", "Javascript"],
@@ -160,7 +180,7 @@ export const myProjects = [
 	{
 		id: 103,
 		title: "Basic Calculator",
-		img: basicCalculatorImg,
+		img: [basicCalculatorImg],
 		link: "https://basic-calculator-self.vercel.app",
 		githubLink: "https://github.com/e-mustafa/basic-Calculator",
 		Language: ["HTML", "CSS", "Bootstrap", "Javascript"],
@@ -170,7 +190,7 @@ export const myProjects = [
 	{
 		id: 102,
 		title: "Watch Products",
-		img: watchProductsImg,
+		img: [watchProductsImg, watchProducts2Img],
 		link: "https://watch-products.vercel.app",
 		githubLink: "https://github.com/e-mustafa/Watch-Products",
 		Language: ["HTML", "CSS", "Bootstrap"],
@@ -179,7 +199,7 @@ export const myProjects = [
 	{
 		id: 101,
 		title: "Template W Carousel",
-		img: templateCarouselImg,
+		img: [templateCarouselImg, templateCarousel2Img],
 		link: "https://template-w-carousel.vercel.app",
 		githubLink: "https://github.com/e-mustafa/template-w-carousel",
 		Language: ["HTML", "CSS", "Bootstrap"],

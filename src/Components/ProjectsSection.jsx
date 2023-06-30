@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Container, Stack, Tab, Tabs } from "react-bootstrap";
-import ProjectCards from "./ProjectCards";
+// import ProjectCards from "./ProjectCards";
 import { myPersonalInfo } from "./mydata";
+import SkeletonCard from "./SkeletonCard";
+
+const ProjectCards = React.lazy(() => import("./ProjectCards"));
 
 export default function ProjectsSection() {
 	const [value, setKey] = useState("home");
@@ -11,10 +14,7 @@ export default function ProjectsSection() {
 				<div className="Projects-section">
 					<Stack className="my-5 text-center">
 						<h2 className="fs-1">My Projects</h2>
-						<p>
-							My name is Mustafa, I live in Egypt, this is the 5th
-							project in React.js
-						</p>
+						<p>My name is Mustafa, I live in Egypt, this is the 5th project in React.js</p>
 					</Stack>
 
 					<div className="projectsTogler">
@@ -31,29 +31,25 @@ export default function ProjectsSection() {
 						fill
 					>
 						<Tab eventKey="home" title="Projects">
-							<ProjectCards />
+							{/* Projects cart loading as lazy ------------------- */}
+							<React.Suspense fallback={<SkeletonCard />}>
+								<ProjectCards />
+							</React.Suspense>
 						</Tab>
 						<Tab eventKey="profile" title="Contact"></Tab>
 						<Tab eventKey="contact" title="Info">
-              {/* presonal information */}
+							{/* presonal information */}
 							<div>
 								<h2 className="fs-2">PERSONAL INFOS</h2>
 
 								<div className="d-flex flex-column flex-md-row flex-wrap gap-3 my-4">
 									{myPersonalInfo?.map((line, i) => (
-										<h6
-											className="text-secondary"
-											key={i}
-											style={{ flex: "1 1 49%" }}
-										>
+										<h6 className="text-secondary" key={i} style={{ flex: "1 1 49%" }}>
 											{line.title}
 											{line.link ? (
 												<a href={line.link}>{line.info}</a>
 											) : (
-												<span
-													className="text-main"
-													style={{ color: line?.color }}
-												>
+												<span className="text-main" style={{ color: line?.color }}>
 													{line.info}
 												</span>
 											)}

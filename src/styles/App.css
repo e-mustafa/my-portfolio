@@ -93,7 +93,7 @@
 /* ------------------------------ main section ------------------------------------- */
 
 .baner {
-	min-height: calc(100vh - 43px);
+	min-height: 100vh;
 	background: url(../imgs/bg-dark-1.jpg);
 	background-size: cover;
 	backdrop-filter: opacity(0.5);

@@ -5,8 +5,7 @@ export default function SocialIcons() {
 	return (
 		<ul className="social-icons justify-content-center m-lg-0 my-3 p-0 ">
 			<li>
-				<a
-					href="https://www.linkedin.com/in/e-mustafa" target="_blank" rel="noreferrer">
+				<a href="https://www.linkedin.com/in/e-mustafa" target="_blank" rel="noreferrer">
 					<FaLinkedinIn fontSize="large" />
 				</a>
 			</li>

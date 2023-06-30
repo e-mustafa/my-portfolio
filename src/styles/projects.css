@@ -1,3 +1,7 @@
+:root {
+	--img-wrapper-hight: 250px;
+}
+
 .nav-tabs .nav-link {
 	border: 1px solid #b5b5b5 !important;
 	padding: 15px;
@@ -61,11 +65,8 @@
 	transition: 0.3s ease-in;
 	-webkit-transition: 0.3s ease-in;
 
-	background: var(--linear-bg2);
+	background: var(--linear-bg);
 	opacity: 0.8;
-}
-.card img {
-	min-height: 70px;
 }
 
 .project-info {
@@ -82,6 +83,7 @@
 	z-index: 5;
 }
 .project-info {
+	/* aspect-ratio: 16 / 9; */
 	font-size: 25px;
 	transition: 0.5s ease-in;
 	-webkit-transition: 0.5s ease-in;
@@ -130,7 +132,7 @@
 }
 
 /* ------------------------- row Card project details --------------------------- */
-.modal-dialog{
+.modal-dialog {
 	padding: 0 10px;
 }
 .modal-content {
@@ -160,24 +162,46 @@
 	right: 0px;
 }
 
-.row_card-img {
+.card-img-wrap {
+	aspect-ratio: 16/9;
+
 	border-radius: 15px;
 	-webkit-border-radius: 15px;
 	box-shadow: var(--main-shadow);
+	overflow: hidden;
 }
+
 @media (max-width: 991px) {
-	.row_card-img {
+	.card-img-wrap {
 		margin-top: -22%;
 		max-width: 100% !important;
 	}
 }
 @media (min-width: 992px) {
-	.row_card-img {
+	.card-img-wrap {
 		margin-left: -33%;
 		height: 250px;
 	}
 }
 
+.row_card-img {
+	width: 100%;
+
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	transition: transform 7s ease-in-out;
+	-webkit-transition: transform 7s ease-in-out;
+
+	transition-delay: 0.8s;
+	object-position: top;
+}
+.row_card-img:hover {
+	transform: translateY(calc(-100% + var(--img-wrapper-hight)));
+	-webkit-transform: translateY(calc(-100% + var(--img-wrapper-hight)));
+	-moz-transform: translateY(calc(-100% + var(--img-wrapper-hight)));
+	-ms-transform: translateY(calc(-100% + var(--img-wrapper-hight)));
+	-o-transform: translateY(calc(-100% + var(--img-wrapper-hight)));
+}
 .row_card-link {
 	padding: 8px 30px;
 	border: 0;
@@ -191,4 +215,18 @@
 
 	margin-right: 20px;
 	color: var(--white-color);
+}
+
+/* ---------------------------- skeleton-card ---------------------------- */
+.skeleton-card {
+	min-height: 220px;
+	opacity: 0.8;
+	animation: blinking 2s infinite ;
+	-webkit-animation: blinking 2s infinite ;
+}
+
+@keyframes blinking {
+	50% {
+		opacity: 0.3;
+	}
 }

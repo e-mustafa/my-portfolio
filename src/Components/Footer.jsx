@@ -17,10 +17,7 @@ export default function Footer() {
 						<Col xs={12} md={6}>
 							<div>
 								<div className="subscribe-email">
-									<Form.Control
-										type="email"
-										placeholder="Enter Your Email"
-									/>
+									<Form.Control type="email" placeholder="Enter Your Email" />
 									<Button className="btn text-light border-0 subscribe-button">
 										Send
 									</Button>
@@ -36,12 +33,11 @@ export default function Footer() {
 					<SocialIcons />
 					<span className="text-center flex-grow-1">
 						Copyrights &#169;
-						{new Date().getFullYear()}&#160; designed & developed by
-						&#160;
+						{new Date().getFullYear()}&#160; designed & developed by &#160;
 						<a
 							href="https://e-mustafa.github.io/portfolio/"
 							target="_blank"
-							rel="noreferrer"
+							rel="noreferrer noopener"
 						>
 							Mustafa Abutabl
 						</a>

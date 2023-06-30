@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import {
 	Button,
 	CloseButton,
@@ -96,18 +96,10 @@ function Contact() {
 					},
 				};
 			});
-		} else if (
-			isValid?.email?.invalid === false ||
-			isValid?.phone?.invalid === false
-		) {
+		} else if (isValid?.email?.invalid === false || isValid?.phone?.invalid === false) {
 			setBtnText("sending...");
 			emailjs
-				.sendForm(
-					"service_lp3qp5q",
-					"template_a98e2km",
-					e.target,
-					"Q4VgSuu5zR0FYlGeR"
-				)
+				.sendForm("service_lp3qp5q", "template_a98e2km", e.target, "Q4VgSuu5zR0FYlGeR")
 				.then(
 					(result) => {
 						console.log(result);
@@ -135,22 +127,18 @@ function Contact() {
 
 	return (
 		<section id="contact" className="contact-section">
-			<Container>
+			<Container id="">
 				<Row className="my-5">
 					<Col xs={12} md={6}>
 						<img src={WebDesignImg} alt="Web Design" width="100%" height="100%" />
 					</Col>
 					<Col xs={12} md={6}>
 						<div>
-							<h2 className="section-title mb-4">Get In Touch</h2>
+							<h2 className="section-title">Get In Touch</h2>
+							<h6 className="text_light mb-4">I'd love to here from you</h6>
 							<Form onSubmit={handelSubmit} action="post">
 								<Row className="gap-row-2 mb-3">
-									<Form.Group
-										as={Col}
-										xs={12}
-										lg={6}
-										controlId="formGridFName"
-									>
+									<Form.Group as={Col} xs={12} lg={6} controlId="formGridFName">
 										<Form.Control
 											type="text"
 											name="name"
@@ -203,11 +191,7 @@ function Contact() {
 										)}
 									</Form.Group>
 
-									<Form.Group
-										as={Col}
-										xs={12}
-										controlId="formGridCity"
-									>
+									<Form.Group as={Col} xs={12} controlId="formGridCity">
 										<Form.Control
 											as="textarea"
 											name="message"
@@ -226,20 +210,13 @@ function Contact() {
 									size="large"
 								>
 									{btnText === "sending..." && (
-										<Spinner
-											animation="border"
-											variant="info"
-											size="sm"
-										/>
+										<Spinner animation="border" variant="info" size="sm" />
 									)}{" "}
 									{btnText}
 								</Button>
 							</Form>
 
-							<ToastContainer
-								position="bottom-start"
-								className="position-fixed p-3"
-							>
+							<ToastContainer position="bottom-start" className="position-fixed p-3">
 								<Toast
 									onClose={() => setShow(false)}
 									show={show}
@@ -250,9 +227,7 @@ function Contact() {
 								>
 									<Toast.Body>
 										<div className="d-flex justify-content-between align-items-center">
-											<h6 className="text-light me-auto">
-												{status?.message}
-											</h6>
+											<h6 className="text-light me-auto">{status?.message}</h6>
 											<CloseButton onClick={() => setShow(false)} />
 										</div>
 									</Toast.Body>
@@ -265,4 +240,4 @@ function Contact() {
 		</section>
 	);
 }
-export default React.memo( Contact);
+export default React.memo(Contact);

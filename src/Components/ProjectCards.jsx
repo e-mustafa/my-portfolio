@@ -26,16 +26,12 @@ export default function ProjectCards() {
 					>
 						<Card
 							onClick={() => handelModal(p)}
-							className="project-card bg-dark text-white overflow-hidden  c-pointer h-100"
+							className="project-card bg-dark text-white overflow-hidden border-0 c-pointer h-100"
 						>
-							<Card.Img
-								src={p.img}
-								alt="Card image "
-								className="h-100"
-							/>
-							<div className="project-info">
+							<Card.Img src={p.img[0]} alt={p.title} className="h-100 object-fit-cover" />
+							<div className="project-info ">
 								<h3>{p.title}</h3>
-								<p>design and devlopment</p>
+								<p>Design and Development</p>
 							</div>
 						</Card>
 					</Col>

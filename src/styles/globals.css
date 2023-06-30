@@ -12,23 +12,19 @@
 	--light-color-trans: rgba(255, 255, 255, 0.657);
 	--dark-color-trans: rgba(0, 0, 0, 0.437);
 
-	--linear-bg: linear-gradient(
-		90deg,
-		var(--main-color) 0%,
-		var(--main-color-darker) 100%
-	);
+	--linear-bg: linear-gradient(90deg, var(--main-color) 0%, var(--main-color-darker) 100%);
 
 	--linear-bg2: linear-gradient(90deg, #0074ff 0%, #01eefe 100%);
 	--linear-bg3: linear-gradient(0deg, #23262b 0%, rgb(70 77 93 / 94%) 100%);
 
 	--main-shadow: 0px 0px 5px 1px var(--main-color);
+	--project-card-height: 150px;
 }
 
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-		"Helvetica Neue", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -38,8 +34,7 @@ body {
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 ul,
@@ -47,27 +42,32 @@ ol {
 	list-style: none;
 }
 
-a{
+a {
 	color: var(--main-color);
 	text-decoration: none;
 }
-a:hover{
+a:hover {
 	color: var(--main-color-dark);
 }
 
-.c-pointer{
+.c-pointer {
 	cursor: pointer;
 }
-.text-main{
+.text_light{
+	color: #d7d7d7;
+}
+.text-main {
 	color: var(--main-color);
 }
-.text-justify{
+.text-justify {
 	text-align: justify;
 }
-.gap-row-2{
-	row-gap: 15px
+.gap-row-2 {
+	row-gap: 15px;
 }
-
+.object-fit-cover {
+	object-fit: cover !important;
+}
 
 /* -------------------------- Button -------------------------- */
 .btn-borderd {

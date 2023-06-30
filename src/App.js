@@ -14,17 +14,18 @@ import ProjectsSection from "./Components/ProjectsSection";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 
+
 function App() {
 	return (
 		<HashRouter>
 			<NavbarMain />
 			<MainSection />
 			<SkillsSwiper />
-			<ProjectsSection />
+				<ProjectsSection />
 			<Contact />
 			<Footer />
 		</HashRouter>
 	);
 }
 
-export default React.memo( App);
+export default React.memo(App);

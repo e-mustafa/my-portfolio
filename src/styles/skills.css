@@ -35,3 +35,27 @@
 div [data-angel] {
 	margin: auto;
 }
+
+/* ------------------------------------------------------------- */
+.circle--bg {
+	fill: none;
+	stroke: #fff;
+}
+
+.circle--progress {
+	fill: none;
+	stroke: rgb(195, 145, 18);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.second-circle {
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+}
+
+/* ---------------------------------------------------------------------------- */
+

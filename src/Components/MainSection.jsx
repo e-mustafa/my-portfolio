@@ -56,9 +56,7 @@ export default function MainSection() {
 				<Row className="align-items-center">
 					<Col xs={12} lg={6}>
 						<Stack gap={2} className="text-light mt-0 mt-lg-5 pb-5">
-							<h5 className="welcome-line">
-								Welcome All in my Portfolio
-							</h5>
+							<h5 className="welcome-line">Welcome All in my Portfolio</h5>
 							<h1>
 								I'm <span>Mustafa Abutabl,</span>
 							</h1>
@@ -70,16 +68,9 @@ export default function MainSection() {
 								</span>
 							</h2>
 
-							<p>
-								{" "}
-								Hello everyone, i have One year of experience in web
-								development{" "}
-							</p>
+							<p> Hello everyone, i have One year of experience in web development </p>
 
-							<HashLink
-								to="/#contact"
-								className="icon-link icon-link-hover"
-							>
+							<HashLink to="/#contact" className="icon-link icon-link-hover">
 								let's connect <FaRegArrowAltCircleRight />
 							</HashLink>
 						</Stack>
